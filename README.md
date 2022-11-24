@@ -23,3 +23,28 @@ function resposta(count) {
 }
 
 resposta(5)
+
+
+
+
+
+function main(array, x, y, cor) {
+   remove(array, x, y, cor)
+    if(x === array.length) {
+        return 
+    } else {
+        main(array, x + 1, y, cor) 
+    }
+}
+
+function remove(array, x, y, cor) {
+    if(array[x - 1][y] === 1) {
+        array[x - 1][y] = cor
+        console.log(array[x - 1])
+    }
+}
+main([[1,1,1], [1,1,0],[1,0,1], [0,1]], 1, 1, 2)
+// Resposta
+[ 1, 2, 1 ]
+[ 1, 2, 0 ]
+[ 0, 2 ]
